@@ -1,4 +1,9 @@
+import { useCart } from '../hooks/useCart';
+
 const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+
+  console.log(addToCart);
   return (
     <div className="flex flex-col rounded-lg bg-white p-4 shadow">
       <img
@@ -8,7 +13,14 @@ const ProductCard = ({ product }) => {
       />
       <h2 className="text-xl font-semibold">{product.name}</h2>
       <p className="mb-2 text-sm text-gray-500">{product.description}</p>
-      <p className="text-lg font-bold">${product.price}</p>
+      <p className="text-lg font-bold">${product.price.toFixed(2)}</p>
+
+      <button
+        onClick={() => addToCart(product)}
+        className="mt-3 rounded bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
+      >
+        Add To Cart
+      </button>
     </div>
   );
 };
