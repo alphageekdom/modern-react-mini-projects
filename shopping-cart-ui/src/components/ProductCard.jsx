@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 
       <button
         onClick={() => addToCart(product)}
-        className="mt-3 rounded bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
+        className="mt-3 cursor-pointer rounded bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
       >
         Add To Cart
       </button>
